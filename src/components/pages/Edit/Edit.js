@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Edit.modules.scss';
+import styles from './Edit.module.scss';
 
 const Edit = () => {
   return (

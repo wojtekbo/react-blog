@@ -1,10 +1,15 @@
 import React from 'react';
-import styles from './Add.modules.scss';
+import styles from './Add.module.scss';
+
+import AddPostForm from '../../features/AddPostForm/AddPostForm';
 
 const Add = () => {
   return (
     <div className={styles.Add}>
-      <h1>Add Post</h1>
+      <div className={styles.wrapper}>
+        <h1>Add Post</h1>
+        <AddPostForm />
+      </div>
     </div>
   );
 };
