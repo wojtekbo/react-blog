@@ -5,3 +5,8 @@
 .wrapper {
   width: 70%;
 }
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

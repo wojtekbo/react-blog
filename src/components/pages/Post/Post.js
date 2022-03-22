@@ -7,17 +7,19 @@ import {Navigate} from 'react-router-dom';
 import {getPostById, deletePost} from '../../../redux/postsRedux.js';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import {NavLink} from 'react-router-dom';
+import Nav from 'react-bootstrap/Nav';
 
 const Post = (props) => {
   const dispatch = useDispatch();
-  const {postId} = useParams();
-  const post = useSelector((state) => getPostById(state, postId));
+  const {id} = useParams();
+  const post = useSelector((state) => getPostById(state, id));
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleRemove = () => {
     setShow(false);
-    dispatch(deletePost(postId));
+    dispatch(deletePost(id));
   };
   if (!post) return <Navigate to="/" />;
   else
@@ -27,9 +29,11 @@ const Post = (props) => {
           <div className="d-flex justify-content-between align-items-center mb-4">
             <h1>{post.title}</h1>
             <div className={styles.buttons}>
-              <Button className="mx-2" href={`/post/edit/${post.id}`} variant="outline-info">
-                Edit
-              </Button>
+              <Nav.Link as={NavLink} to={`/post/edit/${post.id}`}>
+                <Button className="mx-2" variant="outline-info">
+                  Edit
+                </Button>
+              </Nav.Link>
               <Button className="mx-2" variant="outline-danger" onClick={handleShow}>
                 Delete
               </Button>
@@ -47,9 +51,9 @@ const Post = (props) => {
 
           <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-              <Modal.Title>Modal heading</Modal.Title>
+              <Modal.Title>Are you sure?</Modal.Title>
             </Modal.Header>
-            <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+            <Modal.Body>This operation will remove post</Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={handleClose}>
                 Cancel

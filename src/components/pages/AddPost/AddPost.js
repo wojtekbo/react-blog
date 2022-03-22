@@ -1,11 +1,10 @@
 import React from 'react';
-import styles from './Add.module.scss';
-
+import styles from './AddPost.module.scss';
 import AddPostForm from '../../features/AddPostForm/AddPostForm';
 
-const Add = () => {
+const AddPost = () => {
   return (
-    <div className={styles.Add}>
+    <div className={styles.AddPost}>
       <div className={styles.wrapper}>
         <h1>Add Post</h1>
         <AddPostForm />
@@ -14,4 +13,4 @@ const Add = () => {
   );
 };
 
-export default Add;
+export default AddPost;
