@@ -5,6 +5,7 @@ import {useSelector} from 'react-redux';
 import {useDispatch} from 'react-redux';
 import {Navigate} from 'react-router-dom';
 import {getPostById, deletePost} from '../../../redux/postsRedux.js';
+import dateToStr from '../../../utils/dateToStr';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import {NavLink} from 'react-router-dom';
@@ -45,9 +46,9 @@ const Post = (props) => {
           </p>
           <p className="my-1">
             <span className="fw-bold">Published: </span>
-            {post.publishedDate}
+            {dateToStr(post.publishedDate)}
           </p>
-          <p className="my-4">{post.content}</p>
+          <p className="my-4" dangerouslySetInnerHTML={{__html: post.content}} />
 
           <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>

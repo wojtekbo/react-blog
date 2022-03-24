@@ -5,7 +5,7 @@ const initialState = {
       title: 'Article title 1',
       shortDescription: 'Nam beatae repellat est dolor',
       content: 'Main content of the article',
-      publishedDate: '02-02-2022',
+      publishedDate: new Date('2022.01.01'),
       author: 'John Doe',
     },
     {
@@ -13,7 +13,7 @@ const initialState = {
       title: 'Article title 2',
       shortDescription: 'Short description of the article...',
       content: 'Et mollitia animi qui eligendi dolorem in sapiente illo id eligendi dolores sit dolorem repellat.',
-      publishedDate: '25-02-2022',
+      publishedDate: new Date('2022.01.01'),
       author: 'John Doe',
     },
     {
@@ -21,7 +21,7 @@ const initialState = {
       title: 'Article title 3',
       shortDescription: 'Short description of the article...',
       content: 'Main content of the article',
-      publishedDate: '12-02-2022',
+      publishedDate: new Date('2022.01.01'),
       author: 'John Doe',
     },
     {
@@ -29,7 +29,7 @@ const initialState = {
       title: 'Article title 4',
       shortDescription: 'Short description of the article...',
       content: 'Main content of the article',
-      publishedDate: '02-03-2022',
+      publishedDate: new Date('2022.01.01'),
       author: 'John Doe',
     },
   ],

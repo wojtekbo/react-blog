@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import {NavLink} from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
+import dateToStr from '../../../utils/dateToStr';
 
 const PostsList = () => {
   const posts = useSelector((state) => getAllPosts(state));
@@ -27,7 +28,7 @@ const PostsList = () => {
                 <Card.Subtitle className="mb-2">
                   {' '}
                   <span className="fw-bold">Published: </span>
-                  {post.publishedDate}
+                  {dateToStr(post.publishedDate)}
                 </Card.Subtitle>
                 <Card.Text>{post.shortDescription}</Card.Text>
 
