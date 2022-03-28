@@ -1,6 +1,4 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
-import {getAllPosts} from '../../../redux/postsRedux.js';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
@@ -9,12 +7,11 @@ import {NavLink} from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 import dateToStr from '../../../utils/dateToStr';
 
-const PostsList = () => {
-  const posts = useSelector((state) => getAllPosts(state));
+const PostsList = (props) => {
   return (
     <div>
       <Row xs={1} md={2} lg={3} className="g-4">
-        {posts.map((post, idx) => (
+        {props.posts.map((post, idx) => (
           <Col key={post.id}>
             <Card>
               <Card.Body>
@@ -29,6 +26,11 @@ const PostsList = () => {
                   {' '}
                   <span className="fw-bold">Published: </span>
                   {dateToStr(post.publishedDate)}
+                </Card.Subtitle>
+                <Card.Subtitle className="mb-2">
+                  {' '}
+                  <span className="fw-bold">Category: </span>
+                  {post.category}
                 </Card.Subtitle>
                 <Card.Text>{post.shortDescription}</Card.Text>
 

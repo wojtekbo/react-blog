@@ -3,6 +3,7 @@ import uniqid from 'uniqid';
 //selectors
 export const getAllPosts = ({posts}) => posts;
 export const getPostById = ({posts}, id) => posts.filter((post) => post.id === id)[0];
+export const getPostByCategory = ({posts}, category) => posts.filter((post) => post.category === category);
 
 // actions
 const createActionName = (actionName) => `app/posts/${actionName}`;

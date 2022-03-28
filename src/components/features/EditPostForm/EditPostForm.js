@@ -26,6 +26,7 @@ const EditPostForm = () => {
         actionText="Save changes"
         title={post.title}
         author={post.author}
+        category={post.category}
         publishedDate={post.publishedDate}
         shortDescription={post.shortDescription}
         content={post.content}

@@ -48,6 +48,10 @@ const Post = (props) => {
             <span className="fw-bold">Published: </span>
             {dateToStr(post.publishedDate)}
           </p>
+          <p className="my-1">
+            <span className="fw-bold">Category: </span>
+            {post.category}
+          </p>
           <p className="my-4" dangerouslySetInnerHTML={{__html: post.content}} />
 
           <Modal show={show} onHide={handleClose}>

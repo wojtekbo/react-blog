@@ -7,6 +7,7 @@ const initialState = {
       content: 'Main content of the article',
       publishedDate: new Date('2022.01.01'),
       author: 'John Doe',
+      category: 'News',
     },
     {
       id: '2',
@@ -15,6 +16,7 @@ const initialState = {
       content: 'Et mollitia animi qui eligendi dolorem in sapiente illo id eligendi dolores sit dolorem repellat.',
       publishedDate: new Date('2022.01.01'),
       author: 'John Doe',
+      category: 'Sport',
     },
     {
       id: '3',
@@ -23,6 +25,7 @@ const initialState = {
       content: 'Main content of the article',
       publishedDate: new Date('2022.01.01'),
       author: 'John Doe',
+      category: 'Sport',
     },
     {
       id: '4',
@@ -31,8 +34,10 @@ const initialState = {
       content: 'Main content of the article',
       publishedDate: new Date('2022.01.01'),
       author: 'John Doe',
+      category: 'Movies',
     },
   ],
+  categories: ['Movies', 'Sport', 'News'],
 };
 
 export default initialState;
